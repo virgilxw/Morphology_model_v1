@@ -1,4 +1,4 @@
-name: morph_model_v1
+name: morph_downloader
 channels:
   - conda-forge
   - defaults
