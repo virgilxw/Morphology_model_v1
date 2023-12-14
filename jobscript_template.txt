@@ -48,7 +48,7 @@ export OMP_NUM_THREADS=16
 
 # Run the Jupyter notebook
 
-papermill 3_supercomp_morph.ipynb output/{place}_3_supercomp_morph.ipynb -p local_crs 3414 -p place {place} -p lat {lat} -p lng {lng} -p crs {crs} -p local_crs {local_crs}
+papermill 4_aggregation.ipynb output/{place}_4_aggregation.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
 
 #======================================================
 # Epilogue script to record job endtime and runtime

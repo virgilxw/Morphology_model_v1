@@ -48,7 +48,7 @@ export OMP_NUM_THREADS=16
 
 # Run the Jupyter notebook
 
-papermill 3_supercomp_morph.ipynb output/Manchester_3_supercomp_morph.ipynb -p local_crs 3414 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p crs 4326 -p local_crs 27700
+papermill 4_aggregation.ipynb output/Manchester_4_aggregation.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country {country} -p crs 4326
 
 #======================================================
 # Epilogue script to record job endtime and runtime

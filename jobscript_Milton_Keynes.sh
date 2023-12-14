@@ -48,7 +48,7 @@ export OMP_NUM_THREADS=16
 
 # Run the Jupyter notebook
 
-papermill 3_supercomp_morph.ipynb output/Milton_Keynes_3_supercomp_morph.ipynb -p local_crs 3414 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p crs 4326 -p local_crs 27700
+papermill 4_aggregation.ipynb output/Milton_Keynes_4_aggregation.ipynb -p local_crs 4326 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p country {country} -p crs 4326
 
 #======================================================
 # Epilogue script to record job endtime and runtime
