@@ -33,6 +33,8 @@
 module purge
 module load miniconda/3.11.4
 
+export LD_LIBRARY_PATH=/users/wjb22189/.conda/envs/momepy/lib:$LD_LIBRARY_PATH
+
 # Activate the momepy conda environment
 conda activate momepy
 
@@ -48,7 +50,7 @@ export OMP_NUM_THREADS=16
 
 # Run the Jupyter notebook
 
-papermill 4_aggregation.ipynb output/Cardiff_4_aggregation.ipynb -p local_crs 4326 -p place Cardiff -p lat 51.454514 -p lng -2.58791 -p country {country} -p crs 4326
+papermill 4_aggregation.ipynb output/Cardiff_4_aggregation.ipynb -p local_crs 4326 -p place Cardiff -p lat 51.454514 -p lng -2.58791 -p country UK -p crs 4326
 
 #======================================================
 # Epilogue script to record job endtime and runtime
