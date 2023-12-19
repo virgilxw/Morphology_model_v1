@@ -50,7 +50,16 @@ export OMP_NUM_THREADS=16
 
 # Run the Jupyter notebook
 
+
+papermill 1_downloading_data.ipynb output/{place}_1_downloading_data.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+
+papermill 2_tessellation.ipynb output/{place}_2_tessellation.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+
+papermill 3_supercomp_morph.ipynb output/{place}_3_supercomp_morph.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+
 papermill 4_aggregation.ipynb output/{place}_4_aggregation.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+
+papermill 5_clustering.ipynb output/{place}_5_clustering.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
 
 #======================================================
 # Epilogue script to record job endtime and runtime
