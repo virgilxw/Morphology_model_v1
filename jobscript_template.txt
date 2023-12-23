@@ -32,6 +32,7 @@
 
 module purge
 module load miniconda/3.11.4
+module load nvidia/sdk/23.3
 
 export LD_LIBRARY_PATH=/users/wjb22189/.conda/envs/momepy/lib:$LD_LIBRARY_PATH
 
@@ -60,6 +61,12 @@ papermill 3_supercomp_morph.ipynb output/{place}_3_supercomp_morph.ipynb -p loca
 papermill 4_aggregation.ipynb output/{place}_4_aggregation.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
 
 papermill 5_clustering.ipynb output/{place}_5_clustering.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+
+papermill 6_clustering_prep.ipynb output/{place}_6_clustering_prep.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+
+conda activate rapids-23.12
+
+papermill 7_cuml_clustering.ipynb output/{place}_7_cuml_clustering.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
 
 #======================================================
 # Epilogue script to record job endtime and runtime
