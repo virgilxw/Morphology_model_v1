@@ -1,0 +1,509 @@
+===================================================================================
+SLURM Job ID:            10683292
+Submit time:             Sun Dec 24 03:58:10 GMT 2023 (Unix Epoch time: 1703390290)
+Start time:              Sun Dec 24 03:58:15 GMT 2023 (Unix Epoch time: 1703390295)
+No. nodes:               1
+No. tasks:               1
+Job name:                Birmingham_morph
+Account:                 porta-umm
+QoS:                     priority
+Partition (queue):       standard
+Submit directory:        /users/wjb22189/Morphology_model_v1
+Script name:             /users/wjb22189/Morphology_model_v1/jobscript_Birmingham.sh
+Master node:             node044
+Nodes used:              node044
+Task distribution:       
+===================================================================================
+
+Input Notebook:  1_downloading_data.ipynb
+Output Notebook: output/Birmingham_1_downloading_data.ipynb
+Executing:   0%|          | 0/62 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+Executing notebook with kernel: python3
+Executing:   2%|▏         | 1/62 [00:05<05:47,  5.70s/cell]Executing:   2%|▏         | 1/62 [00:06<06:13,  6.12s/cell]
+Traceback (most recent call last):
+  File "/users/wjb22189/.conda/envs/momepy/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+             ^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 128, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 232, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [1]":
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Cell In[1], line 7
+      5 from shapely.geometry import Point, box, MultiLineString
+      6 from shapely.ops import unary_union
+----> 7 import planetary_computer
+      8 import pystac_client
+      9 import dask.dataframe
+
+ModuleNotFoundError: No module named 'planetary_computer'
+
+Input Notebook:  2_tessellation.ipynb
+Output Notebook: output/Birmingham_2_tessellation.ipynb
+Executing:   0%|          | 0/45 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+Executing notebook with kernel: python3
+Executing:   2%|▏         | 1/45 [00:05<03:43,  5.07s/cell]Executing:  11%|█         | 5/45 [00:05<00:37,  1.06cell/s]Executing:  11%|█         | 5/45 [00:06<00:51,  1.29s/cell]
+Traceback (most recent call last):
+  File "/users/wjb22189/.conda/envs/momepy/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+             ^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 128, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 232, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [5]":
+---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+Cell In[5], line 1
+----> 1 streets = gpd.read_parquet(f"./output/{place}/streets_raw.pq").explode().to_crs(local_crs).reset_index(drop=True)
+      3 buildings = gpd.read_parquet(f"./output/{place}/buildings_raw.pq").to_crs(local_crs)
+      5 study_area = gpd.read_parquet(f"./output/{place}/study_area.pq").to_crs(local_crs)
+
+File ~/.conda/envs/momepy/lib/python3.11/site-packages/geopandas/io/arrow.py:601, in _read_parquet(path, columns, storage_options, **kwargs)
+    599 path = _expand_user(path)
+    600 kwargs["use_pandas_metadata"] = True
+--> 601 table = parquet.read_table(path, columns=columns, filesystem=filesystem, **kwargs)
+    603 # read metadata separately to get the raw Parquet FileMetaData metadata
+    604 # (pyarrow doesn't properly exposes those in schema.metadata for files
+    605 # created by GDAL - https://issues.apache.org/jira/browse/ARROW-16688)
+    606 metadata = None
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/parquet/core.py:2956, in read_table(source, columns, use_threads, metadata, schema, use_pandas_metadata, read_dictionary, memory_map, buffer_size, partitioning, filesystem, filters, use_legacy_dataset, ignore_prefixes, pre_buffer, coerce_int96_timestamp_unit, decryption_properties, thrift_string_size_limit, thrift_container_size_limit)
+   2949     raise ValueError(
+   2950         "The 'metadata' keyword is no longer supported with the new "
+   2951         "datasets-based implementation. Specify "
+   2952         "'use_legacy_dataset=True' to temporarily recover the old "
+   2953         "behaviour."
+   2954     )
+   2955 try:
+-> 2956     dataset = _ParquetDatasetV2(
+   2957         source,
+   2958         schema=schema,
+   2959         filesystem=filesystem,
+   2960         partitioning=partitioning,
+   2961         memory_map=memory_map,
+   2962         read_dictionary=read_dictionary,
+   2963         buffer_size=buffer_size,
+   2964         filters=filters,
+   2965         ignore_prefixes=ignore_prefixes,
+   2966         pre_buffer=pre_buffer,
+   2967         coerce_int96_timestamp_unit=coerce_int96_timestamp_unit,
+   2968         thrift_string_size_limit=thrift_string_size_limit,
+   2969         thrift_container_size_limit=thrift_container_size_limit,
+   2970     )
+   2971 except ImportError:
+   2972     # fall back on ParquetFile for simple cases when pyarrow.dataset
+   2973     # module is not available
+   2974     if filters is not None:
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/parquet/core.py:2507, in _ParquetDatasetV2.__init__(self, path_or_paths, filesystem, filters, partitioning, read_dictionary, buffer_size, memory_map, ignore_prefixes, pre_buffer, coerce_int96_timestamp_unit, schema, decryption_properties, thrift_string_size_limit, thrift_container_size_limit, **kwargs)
+   2503 if partitioning == "hive":
+   2504     partitioning = ds.HivePartitioning.discover(
+   2505         infer_dictionary=True)
+-> 2507 self._dataset = ds.dataset(path_or_paths, filesystem=filesystem,
+   2508                            schema=schema, format=parquet_format,
+   2509                            partitioning=partitioning,
+   2510                            ignore_prefixes=ignore_prefixes)
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/dataset.py:782, in dataset(source, schema, format, filesystem, partitioning, partition_base_dir, exclude_invalid_files, ignore_prefixes)
+    771 kwargs = dict(
+    772     schema=schema,
+    773     filesystem=filesystem,
+   (...)
+    778     selector_ignore_prefixes=ignore_prefixes
+    779 )
+    781 if _is_path_like(source):
+--> 782     return _filesystem_dataset(source, **kwargs)
+    783 elif isinstance(source, (tuple, list)):
+    784     if all(_is_path_like(elem) for elem in source):
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/dataset.py:465, in _filesystem_dataset(source, schema, filesystem, partitioning, format, partition_base_dir, exclude_invalid_files, selector_ignore_prefixes)
+    463     fs, paths_or_selector = _ensure_multiple_sources(source, filesystem)
+    464 else:
+--> 465     fs, paths_or_selector = _ensure_single_source(source, filesystem)
+    467 options = FileSystemFactoryOptions(
+    468     partitioning=partitioning,
+    469     partition_base_dir=partition_base_dir,
+    470     exclude_invalid_files=exclude_invalid_files,
+    471     selector_ignore_prefixes=selector_ignore_prefixes
+    472 )
+    473 factory = FileSystemDatasetFactory(fs, paths_or_selector, format, options)
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/dataset.py:441, in _ensure_single_source(path, filesystem)
+    439     paths_or_selector = [path]
+    440 else:
+--> 441     raise FileNotFoundError(path)
+    443 return filesystem, paths_or_selector
+
+FileNotFoundError: ./output/Birmingham/streets_raw.pq
+
+Input Notebook:  3_supercomp_morph.ipynb
+Output Notebook: output/Birmingham_3_supercomp_morph.ipynb
+Executing:   0%|          | 0/17 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+Executing notebook with kernel: python3
+Executing:   6%|▌         | 1/17 [00:02<00:44,  2.81s/cell]Executing:  24%|██▎       | 4/17 [00:05<00:14,  1.14s/cell]Executing:  35%|███▌      | 6/17 [00:05<00:08,  1.25cell/s]Executing:  35%|███▌      | 6/17 [00:08<00:15,  1.40s/cell]
+Traceback (most recent call last):
+  File "/users/wjb22189/.conda/envs/momepy/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+             ^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 128, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 232, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [6]":
+---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+Cell In[6], line 1
+----> 1 tessellation = pd.read_parquet(f"./output/{place}/tessellation_p1.pq",engine='fastparquet')
+      2 tessellation['geometry'] = tessellation['geometry'].apply(lambda x: loads(x) if x else None)
+      3 tessellation = gpd.GeoDataFrame(tessellation, geometry="geometry").set_crs(local_crs)
+
+File ~/.conda/envs/momepy/lib/python3.11/site-packages/pandas/io/parquet.py:670, in read_parquet(path, engine, columns, storage_options, use_nullable_dtypes, dtype_backend, filesystem, filters, **kwargs)
+    667     use_nullable_dtypes = False
+    668 check_dtype_backend(dtype_backend)
+--> 670 return impl.read(
+    671     path,
+    672     columns=columns,
+    673     filters=filters,
+    674     storage_options=storage_options,
+    675     use_nullable_dtypes=use_nullable_dtypes,
+    676     dtype_backend=dtype_backend,
+    677     filesystem=filesystem,
+    678     **kwargs,
+    679 )
+
+File ~/.conda/envs/momepy/lib/python3.11/site-packages/pandas/io/parquet.py:394, in FastParquetImpl.read(self, path, columns, filters, storage_options, filesystem, **kwargs)
+    389     parquet_kwargs["fs"] = fsspec.open(path, "rb", **(storage_options or {})).fs
+    390 elif isinstance(path, str) and not os.path.isdir(path):
+    391     # use get_handle only when we are very certain that it is not a directory
+    392     # fsspec resources can also point to directories
+    393     # this branch is used for example when reading from non-fsspec URLs
+--> 394     handles = get_handle(
+    395         path, "rb", is_text=False, storage_options=storage_options
+    396     )
+    397     path = handles.handle
+    399 try:
+
+File ~/.conda/envs/momepy/lib/python3.11/site-packages/pandas/io/common.py:872, in get_handle(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)
+    863         handle = open(
+    864             handle,
+    865             ioargs.mode,
+   (...)
+    868             newline="",
+    869         )
+    870     else:
+    871         # Binary mode
+--> 872         handle = open(handle, ioargs.mode)
+    873     handles.append(handle)
+    875 # Convert BytesIO or file objects passed with an encoding
+
+FileNotFoundError: [Errno 2] No such file or directory: './output/Birmingham/tessellation_p1.pq'
+
+Input Notebook:  4_aggregation.ipynb
+Output Notebook: output/Birmingham_4_aggregation.ipynb
+Traceback (most recent call last):
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 212, in read
+    json.loads(path)
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/json/decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 2 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/users/wjb22189/.conda/envs/momepy/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+             ^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 89, in execute_notebook
+    nb = load_notebook_node(input_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 512, in load_notebook_node
+    nb = nbformat.reads(papermill_io.read(notebook_path), as_version=4)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 100, in read
+    notebook_metadata = self.get_handler(path, extensions).read(path)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 216, in read
+    raise e
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 206, in read
+    with io.open(path, 'r', encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '4_aggregation.ipynb'
+Input Notebook:  5_clustering.ipynb
+Output Notebook: output/Birmingham_5_clustering.ipynb
+Traceback (most recent call last):
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 212, in read
+    json.loads(path)
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/json/decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 2 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/users/wjb22189/.conda/envs/momepy/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+             ^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 89, in execute_notebook
+    nb = load_notebook_node(input_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 512, in load_notebook_node
+    nb = nbformat.reads(papermill_io.read(notebook_path), as_version=4)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 100, in read
+    notebook_metadata = self.get_handler(path, extensions).read(path)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 216, in read
+    raise e
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/iorw.py", line 206, in read
+    with io.open(path, 'r', encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '5_clustering.ipynb'
+Input Notebook:  6_clustering_prep.ipynb
+Output Notebook: output/Birmingham_6_clustering_prep.ipynb
+Executing:   0%|          | 0/47 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+Executing notebook with kernel: python3
+Executing:   2%|▏         | 1/47 [00:02<02:07,  2.78s/cell]Executing:   9%|▊         | 4/47 [00:03<00:31,  1.39cell/s]Executing:   9%|▊         | 4/47 [00:04<00:43,  1.00s/cell]
+Traceback (most recent call last):
+  File "/users/wjb22189/.conda/envs/momepy/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+             ^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 128, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/users/wjb22189/.conda/envs/momepy/lib/python3.11/site-packages/papermill/execute.py", line 232, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [4]":
+---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+Cell In[4], line 1
+----> 1 grid = gpd.read_parquet(f"output/{place}/p4-grid-output.pq")
+
+File ~/.conda/envs/momepy/lib/python3.11/site-packages/geopandas/io/arrow.py:601, in _read_parquet(path, columns, storage_options, **kwargs)
+    599 path = _expand_user(path)
+    600 kwargs["use_pandas_metadata"] = True
+--> 601 table = parquet.read_table(path, columns=columns, filesystem=filesystem, **kwargs)
+    603 # read metadata separately to get the raw Parquet FileMetaData metadata
+    604 # (pyarrow doesn't properly exposes those in schema.metadata for files
+    605 # created by GDAL - https://issues.apache.org/jira/browse/ARROW-16688)
+    606 metadata = None
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/parquet/core.py:2956, in read_table(source, columns, use_threads, metadata, schema, use_pandas_metadata, read_dictionary, memory_map, buffer_size, partitioning, filesystem, filters, use_legacy_dataset, ignore_prefixes, pre_buffer, coerce_int96_timestamp_unit, decryption_properties, thrift_string_size_limit, thrift_container_size_limit)
+   2949     raise ValueError(
+   2950         "The 'metadata' keyword is no longer supported with the new "
+   2951         "datasets-based implementation. Specify "
+   2952         "'use_legacy_dataset=True' to temporarily recover the old "
+   2953         "behaviour."
+   2954     )
+   2955 try:
+-> 2956     dataset = _ParquetDatasetV2(
+   2957         source,
+   2958         schema=schema,
+   2959         filesystem=filesystem,
+   2960         partitioning=partitioning,
+   2961         memory_map=memory_map,
+   2962         read_dictionary=read_dictionary,
+   2963         buffer_size=buffer_size,
+   2964         filters=filters,
+   2965         ignore_prefixes=ignore_prefixes,
+   2966         pre_buffer=pre_buffer,
+   2967         coerce_int96_timestamp_unit=coerce_int96_timestamp_unit,
+   2968         thrift_string_size_limit=thrift_string_size_limit,
+   2969         thrift_container_size_limit=thrift_container_size_limit,
+   2970     )
+   2971 except ImportError:
+   2972     # fall back on ParquetFile for simple cases when pyarrow.dataset
+   2973     # module is not available
+   2974     if filters is not None:
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/parquet/core.py:2507, in _ParquetDatasetV2.__init__(self, path_or_paths, filesystem, filters, partitioning, read_dictionary, buffer_size, memory_map, ignore_prefixes, pre_buffer, coerce_int96_timestamp_unit, schema, decryption_properties, thrift_string_size_limit, thrift_container_size_limit, **kwargs)
+   2503 if partitioning == "hive":
+   2504     partitioning = ds.HivePartitioning.discover(
+   2505         infer_dictionary=True)
+-> 2507 self._dataset = ds.dataset(path_or_paths, filesystem=filesystem,
+   2508                            schema=schema, format=parquet_format,
+   2509                            partitioning=partitioning,
+   2510                            ignore_prefixes=ignore_prefixes)
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/dataset.py:782, in dataset(source, schema, format, filesystem, partitioning, partition_base_dir, exclude_invalid_files, ignore_prefixes)
+    771 kwargs = dict(
+    772     schema=schema,
+    773     filesystem=filesystem,
+   (...)
+    778     selector_ignore_prefixes=ignore_prefixes
+    779 )
+    781 if _is_path_like(source):
+--> 782     return _filesystem_dataset(source, **kwargs)
+    783 elif isinstance(source, (tuple, list)):
+    784     if all(_is_path_like(elem) for elem in source):
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/dataset.py:465, in _filesystem_dataset(source, schema, filesystem, partitioning, format, partition_base_dir, exclude_invalid_files, selector_ignore_prefixes)
+    463     fs, paths_or_selector = _ensure_multiple_sources(source, filesystem)
+    464 else:
+--> 465     fs, paths_or_selector = _ensure_single_source(source, filesystem)
+    467 options = FileSystemFactoryOptions(
+    468     partitioning=partitioning,
+    469     partition_base_dir=partition_base_dir,
+    470     exclude_invalid_files=exclude_invalid_files,
+    471     selector_ignore_prefixes=selector_ignore_prefixes
+    472 )
+    473 factory = FileSystemDatasetFactory(fs, paths_or_selector, format, options)
+
+File ~/.local/lib/python3.11/site-packages/pyarrow/dataset.py:441, in _ensure_single_source(path, filesystem)
+    439     paths_or_selector = [path]
+    440 else:
+--> 441     raise FileNotFoundError(path)
+    443 return filesystem, paths_or_selector
+
+FileNotFoundError: output/Birmingham/p4-grid-output.pq
+
+===================================================================================
+SLURM job 10683292 ended:     Sun Dec 24 03:58:50 GMT 2023 (Unix Epoch time: 1703390330)
+This is an estimated end time using the 'date' command from node node044.hpc.strath.ac.uk
+For accurate timings, use 'sacct -j 10683292 -X --format=Submit,Start,End,Elapsed'
+======================================================================================

@@ -51,22 +51,21 @@ export OMP_NUM_THREADS=16
 
 # Run the Jupyter notebook
 
+conda activate downloader
 
-papermill 1_downloading_data.ipynb output/{place}_1_downloading_data.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+papermill 1_downloading_data.ipynb output/{place}_1_downloading_data.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
 
-papermill 2_tessellation.ipynb output/{place}_2_tessellation.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+conda activate momepy
 
-papermill 3_supercomp_morph.ipynb output/{place}_3_supercomp_morph.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+papermill 2_tessellation.ipynb output/{place}_2_tessellation.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
 
-papermill 4_aggregation.ipynb output/{place}_4_aggregation.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+papermill 3_supercomp_morph.ipynb output/{place}_3_supercomp_morph.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
 
-papermill 5_clustering.ipynb output/{place}_5_clustering.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+papermill 4_aggregation.ipynb output/{place}_4_aggregation.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
 
-papermill 6_clustering_prep.ipynb output/{place}_6_clustering_prep.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+papermill 5_clustering.ipynb output/{place}_5_clustering.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
 
-conda activate rapids-23.12
-
-papermill 7_cuml_clustering.ipynb output/{place}_7_cuml_clustering.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs}
+papermill 6_clustering_prep.ipynb output/{place}_6_clustering_prep.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
 
 #======================================================
 # Epilogue script to record job endtime and runtime

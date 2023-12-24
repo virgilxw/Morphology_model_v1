@@ -52,17 +52,17 @@ export OMP_NUM_THREADS=16
 # Run the Jupyter notebook
 
 
-papermill 1_downloading_data.ipynb output/Birmingham_1_downloading_data.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326
+papermill 1_downloading_data.ipynb output/Birmingham_1_downloading_data.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326 -p radius 27700
 
-papermill 2_tessellation.ipynb output/Birmingham_2_tessellation.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326
+papermill 2_tessellation.ipynb output/Birmingham_2_tessellation.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326 -p radius 27700
 
-papermill 3_supercomp_morph.ipynb output/Birmingham_3_supercomp_morph.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326
+papermill 3_supercomp_morph.ipynb output/Birmingham_3_supercomp_morph.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326 -p radius 27700
 
-papermill 4_aggregation.ipynb output/Birmingham_4_aggregation.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326
+papermill 4_aggregation.ipynb output/Birmingham_4_aggregation.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326 -p radius 27700
 
-papermill 5_clustering.ipynb output/Birmingham_5_clustering.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326
+papermill 5_clustering.ipynb output/Birmingham_5_clustering.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326 -p radius 27700
 
-papermill 6_clustering_prep.ipynb output/Birmingham_6_clustering_prep.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326
+papermill 6_clustering_prep.ipynb output/Birmingham_6_clustering_prep.ipynb -p local_crs 4326 -p place Birmingham -p lat 52.47790683186595 -p lng -1.8999014571831943 -p country UK -p crs 4326 -p radius 27700
 
 #======================================================
 # Epilogue script to record job endtime and runtime

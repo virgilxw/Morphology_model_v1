@@ -52,17 +52,17 @@ export OMP_NUM_THREADS=16
 # Run the Jupyter notebook
 
 
-papermill 1_downloading_data.ipynb output/Manchester_1_downloading_data.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326
+papermill 1_downloading_data.ipynb output/Manchester_1_downloading_data.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326 -p radius 27700
 
-papermill 2_tessellation.ipynb output/Manchester_2_tessellation.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326
+papermill 2_tessellation.ipynb output/Manchester_2_tessellation.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326 -p radius 27700
 
-papermill 3_supercomp_morph.ipynb output/Manchester_3_supercomp_morph.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326
+papermill 3_supercomp_morph.ipynb output/Manchester_3_supercomp_morph.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326 -p radius 27700
 
-papermill 4_aggregation.ipynb output/Manchester_4_aggregation.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326
+papermill 4_aggregation.ipynb output/Manchester_4_aggregation.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326 -p radius 27700
 
-papermill 5_clustering.ipynb output/Manchester_5_clustering.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326
+papermill 5_clustering.ipynb output/Manchester_5_clustering.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326 -p radius 27700
 
-papermill 6_clustering_prep.ipynb output/Manchester_6_clustering_prep.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326
+papermill 6_clustering_prep.ipynb output/Manchester_6_clustering_prep.ipynb -p local_crs 4326 -p place Manchester -p lat 53.483959 -p lng -2.244644 -p country UK -p crs 4326 -p radius 27700
 
 #======================================================
 # Epilogue script to record job endtime and runtime

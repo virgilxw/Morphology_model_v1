@@ -24,7 +24,7 @@
 #SBATCH --time=08:00:00
 #
 # Job name
-#SBATCH --job-name=test_morph
+#SBATCH --job-name=London_morph
 #
 # Output file
 #SBATCH --output=slurm-%j.out
@@ -50,19 +50,19 @@ export OMP_NUM_THREADS=16
 #------------------------------------------------------
 
 # Run the Jupyter notebook
-papermill 1_downloading_data.ipynb output/test_1_downloading_data.ipynb -p local_crs 4326 -p place test -p lat 55.86421405612109 -p lng -4.251846930489373 -p country UK -p crs 4326
 
-conda activate processor
 
-papermill 2_tessellation.ipynb output/test_2_tessellation.ipynb -p local_crs 4326 -p place test -p lat 55.86421405612109 -p lng -4.251846930489373 -p country UK -p crs 4326
+papermill 1_downloading_data.ipynb output/London_1_downloading_data.ipynb -p local_crs 4326 -p place London -p lat 51.507222 -p lng -0.1275 -p country UK -p crs 4326 -p radius 27700
 
-papermill 3_supercomp_morph.ipynb output/test_3_supercomp_morph.ipynb -p local_crs 4326 -p place test -p lat 55.86421405612109 -p lng -4.251846930489373 -p country UK -p crs 4326
+papermill 2_tessellation.ipynb output/London_2_tessellation.ipynb -p local_crs 4326 -p place London -p lat 51.507222 -p lng -0.1275 -p country UK -p crs 4326 -p radius 27700
 
-papermill 4_aggregation.ipynb output/test_4_aggregation.ipynb -p local_crs 4326 -p place test -p lat 55.86421405612109 -p lng -4.251846930489373 -p country UK -p crs 4326
+papermill 3_supercomp_morph.ipynb output/London_3_supercomp_morph.ipynb -p local_crs 4326 -p place London -p lat 51.507222 -p lng -0.1275 -p country UK -p crs 4326 -p radius 27700
 
-papermill 5_clustering.ipynb output/test_5_clustering.ipynb -p local_crs 4326 -p place test -p lat 55.86421405612109 -p lng -4.251846930489373 -p country UK -p crs 4326
+papermill 4_aggregation.ipynb output/London_4_aggregation.ipynb -p local_crs 4326 -p place London -p lat 51.507222 -p lng -0.1275 -p country UK -p crs 4326 -p radius 27700
 
-papermill 6_clustering_prep.ipynb output/test_6_clustering_prep.ipynb -p local_crs 4326 -p place test -p lat 55.86421405612109 -p lng -4.251846930489373 -p country UK -p crs 4326
+papermill 5_clustering.ipynb output/London_5_clustering.ipynb -p local_crs 4326 -p place London -p lat 51.507222 -p lng -0.1275 -p country UK -p crs 4326 -p radius 27700
+
+papermill 6_clustering_prep.ipynb output/London_6_clustering_prep.ipynb -p local_crs 4326 -p place London -p lat 51.507222 -p lng -0.1275 -p country UK -p crs 4326 -p radius 27700
 
 #======================================================
 # Epilogue script to record job endtime and runtime

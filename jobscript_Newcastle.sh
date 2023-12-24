@@ -52,19 +52,17 @@ export OMP_NUM_THREADS=16
 # Run the Jupyter notebook
 
 
-papermill 1_downloading_data.ipynb output/Newcastle_1_downloading_data.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326
+papermill 1_downloading_data.ipynb output/Newcastle_1_downloading_data.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326 -p radius 27700
 
-conda activate momepy
+papermill 2_tessellation.ipynb output/Newcastle_2_tessellation.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326 -p radius 27700
 
-papermill 2_tessellation.ipynb output/Newcastle_2_tessellation.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326
+papermill 3_supercomp_morph.ipynb output/Newcastle_3_supercomp_morph.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326 -p radius 27700
 
-papermill 3_supercomp_morph.ipynb output/Newcastle_3_supercomp_morph.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326
+papermill 4_aggregation.ipynb output/Newcastle_4_aggregation.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326 -p radius 27700
 
-papermill 4_aggregation.ipynb output/Newcastle_4_aggregation.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326
+papermill 5_clustering.ipynb output/Newcastle_5_clustering.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326 -p radius 27700
 
-papermill 5_clustering.ipynb output/Newcastle_5_clustering.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326
-
-papermill 6_clustering_prep.ipynb output/Newcastle_6_clustering_prep.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326
+papermill 6_clustering_prep.ipynb output/Newcastle_6_clustering_prep.ipynb -p local_crs 4326 -p place Newcastle -p lat 54.98 -p lng -1.61 -p country UK -p crs 4326 -p radius 27700
 
 #======================================================
 # Epilogue script to record job endtime and runtime

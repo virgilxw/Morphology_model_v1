@@ -52,17 +52,17 @@ export OMP_NUM_THREADS=16
 # Run the Jupyter notebook
 
 
-papermill 1_downloading_data.ipynb output/Bristol_1_downloading_data.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326
+papermill 1_downloading_data.ipynb output/Bristol_1_downloading_data.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326 -p radius 27700
 
-papermill 2_tessellation.ipynb output/Bristol_2_tessellation.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326
+papermill 2_tessellation.ipynb output/Bristol_2_tessellation.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326 -p radius 27700
 
-papermill 3_supercomp_morph.ipynb output/Bristol_3_supercomp_morph.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326
+papermill 3_supercomp_morph.ipynb output/Bristol_3_supercomp_morph.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326 -p radius 27700
 
-papermill 4_aggregation.ipynb output/Bristol_4_aggregation.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326
+papermill 4_aggregation.ipynb output/Bristol_4_aggregation.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326 -p radius 27700
 
-papermill 5_clustering.ipynb output/Bristol_5_clustering.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326
+papermill 5_clustering.ipynb output/Bristol_5_clustering.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326 -p radius 27700
 
-papermill 6_clustering_prep.ipynb output/Bristol_6_clustering_prep.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326
+papermill 6_clustering_prep.ipynb output/Bristol_6_clustering_prep.ipynb -p local_crs 4326 -p place Bristol -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326 -p radius 27700
 
 #======================================================
 # Epilogue script to record job endtime and runtime
