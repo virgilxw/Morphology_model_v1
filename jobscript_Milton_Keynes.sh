@@ -21,7 +21,7 @@
 #SBATCH --ntasks=1 --cpus-per-task=16
 #
 # Specify (hard) runtime (HH:MM:SS)
-#SBATCH --time=08:00:00
+#SBATCH --time=14:00:00
 #
 # Job name
 #SBATCH --job-name=Milton_Keynes_morph
@@ -51,22 +51,24 @@ export OMP_NUM_THREADS=16
 
 # Run the Jupyter notebook
 
+dir="./output/Milton_Keynes"
 
-papermill 1_downloading_data.ipynb output/Milton_Keynes_1_downloading_data.ipynb -p local_crs 4326 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 27700
+# Check if the directory doesn't exist
+if [ ! -d "$dir" ]; then
+    # Create the directory
+    mkdir -p "$dir"
+    echo "Directory created: $dir"
+fi
 
-papermill 2_tessellation.ipynb output/Milton_Keynes_2_tessellation.ipynb -p local_crs 4326 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 27700
+conda activate downloader
 
-papermill 3_supercomp_morph.ipynb output/Milton_Keynes_3_supercomp_morph.ipynb -p local_crs 4326 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 27700
-
-papermill 4_aggregation.ipynb output/Milton_Keynes_4_aggregation.ipynb -p local_crs 4326 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 27700
-
-papermill 5_clustering.ipynb output/Milton_Keynes_5_clustering.ipynb -p local_crs 4326 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 27700
-
-papermill 6_clustering_prep.ipynb output/Milton_Keynes_6_clustering_prep.ipynb -p local_crs 4326 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 27700
+papermill 1_downloading_data.ipynb output/Milton_Keynes/Milton_Keynes_1_downloading_data.ipynb -p local_crs 4326 -p place Milton_Keynes -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 20
 
 #======================================================
 # Epilogue script to record job endtime and runtime
 # Do not change the line below
 #======================================================
 /opt/software/scripts/job_epilogue.sh 
+
+tail -f slurm-$Milton_Keynes_SLURM_JOB_ID.out &
 #------------------------------------------------------
