@@ -27,7 +27,11 @@
 #SBATCH --job-name={place}_morph
 #
 # Output file
-#SBATCH --output=slurm-%j.out
+#SBATCH --output={place}-slurm-%j.out
+
+# email notifications
+#SBATCH --mail-user=reuben.xianwei.wang@strath.ac.uk
+#SBATCH --mail-type=BEGIN,END
 #======================================================
 
 module purge
@@ -42,6 +46,9 @@ conda activate momepy
 # Set the number of threads
 export OMP_NUM_THREADS=16
 
+# Immediately exit if any command has a non-zero exit status.
+set -e
+
 #======================================================
 # Prologue script to record job details
 # Do not change the line below
@@ -51,7 +58,7 @@ export OMP_NUM_THREADS=16
 
 # Run the Jupyter notebook
 
-dir="./output/{place}"
+dir="output/{place}"
 
 # Check if the directory doesn't exist
 if [ ! -d "$dir" ]; then
@@ -60,15 +67,19 @@ if [ ! -d "$dir" ]; then
     echo "Directory created: $dir"
 fi
 
-conda activate downloader
+# Run the Jupyter notebook and capture the exit status
+papermill 4_network.ipynb ../output/{place}/{place}_4_network.ipynb -p local_crs {local_crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
+status=$?
 
-papermill 1_downloading_data.ipynb output/{place}/{place}_1_downloading_data.ipynb -p local_crs {crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
+# Check if papermill execution was successful
+if [ $status -ne 0 ]; then
+    echo "Papermill execution failed with status $status"
+    exit $status
+fi
 
 #======================================================
 # Epilogue script to record job endtime and runtime
 # Do not change the line below
 #======================================================
-/opt/software/scripts/job_epilogue.sh 
-
-tail -f slurm-${place}_SLURM_JOB_ID.out &
+/opt/software/scripts/job_epilogue.sh
 #------------------------------------------------------
