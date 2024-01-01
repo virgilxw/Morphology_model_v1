@@ -1,5 +1,6 @@
 import networkx as nx
 import graph_tool as gt
+from tqdm import tqdm
 
 def get_prop_type(value, key=None):
     """
@@ -63,7 +64,7 @@ def nx2gt(nxG):
     # Go through all nodes and edges and add seen properties
     # Add the node properties first
     nprops = set() # cache keys to only add properties once
-    for node, data in nxG.nodes(data=True):
+    for node, data in tqdm(nxG.nodes(data=True)):
 
         # Go through all the properties if not seen and add them.
         for key, val in data.items():
@@ -84,7 +85,7 @@ def nx2gt(nxG):
 
     # Add the edge properties second
     eprops = set() # cache keys to only add properties once
-    for src, dst, data in nxG.edges(data=True):
+    for src, dst, data in tqdm(nxG.edges(data=True)):
 
         # Go through all the edge properties if not seen and add them.
         for key, val in data.items():
@@ -101,7 +102,7 @@ def nx2gt(nxG):
     # Phase 2: Actually add all the nodes and vertices with their properties
     # Add the nodes
     vertices = {} # vertex mapping for tracking edges later
-    for node, data in nxG.nodes(data=True):
+    for node, data in tqdm(nxG.nodes(data=True)):
 
         # Create the vertex and annotate for our edges later
         v = gtG.add_vertex()
@@ -113,7 +114,7 @@ def nx2gt(nxG):
             gtG.vp[key][v] = value # vp is short for vertex_properties
 
     # Add the edges
-    for src, dst, data in nxG.edges(data=True):
+    for src, dst, data in tqdm(nxG.edges(data=True)):
 
         # Look up the vertex structs from our vertices mapping and add edge.
         e = gtG.add_edge(vertices[src], vertices[dst])

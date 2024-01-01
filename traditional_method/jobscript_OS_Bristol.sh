@@ -68,7 +68,7 @@ if [ ! -d "$dir" ]; then
 fi
 
 # Run the Jupyter notebook and capture the exit status
-papermill 2_tessellation.ipynb ../output/Bristol_OS/Bristol_2_tessellation.ipynb -p local_crs 27700 -p place Bristol_OS -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326 -p radius 20
+papermill 1_ordanance_survey.ipynb ../output/Bristol_OS/Bristol_1_ordanance_survey.ipynb -p local_crs 27700 -p place Bristol_OS -p lat 51.453611 -p lng -2.5975 -p country UK -p crs 4326 -p radius 20
 status=$?
 
 # Check if papermill execution was successful
