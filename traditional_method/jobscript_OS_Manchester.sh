@@ -27,16 +27,18 @@
 #SBATCH --job-name=Manchester_OS_morph
 #
 # Output file
-#SBATCH --output=Manchester-OS-slurm-%j.out
+#SBATCH --output=Manchester_OS-slurm-%j.out
 
-# email notifications
 #SBATCH --mail-user=reuben.xianwei.wang@strath.ac.uk
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=TIME_LIMIT,FAIL
+
+
 #======================================================
 
 module purge
 module load miniconda/3.11.4
 module load nvidia/sdk/23.3
+module load gcc/12.2.0
 
 export LD_LIBRARY_PATH=/users/wjb22189/.conda/envs/momepy/lib:$LD_LIBRARY_PATH
 
@@ -56,9 +58,7 @@ set -e
 /opt/software/scripts/job_prologue.sh  
 #------------------------------------------------------
 
-# Run the Jupyter notebook
-
-dir="output/Manchester"
+dir="../output/Manchester_OS"
 
 # Check if the directory doesn't exist
 if [ ! -d "$dir" ]; then
@@ -67,8 +67,10 @@ if [ ! -d "$dir" ]; then
     echo "Directory created: $dir"
 fi
 
-# Run the Jupyter notebook and capture the exit status
-papermill 1_ordanance_survey.ipynb ../output/Manchester_OS/Manchester_1_ordanance_survey.ipynb -p local_crs 27700 -p place Manchester_OS -p lat 53.479444 -p lng -2.245278 -p country UK -p crs 4326 -p radius 20
+# Run the Jupyter notebook
+
+conda activate downloader
+papermill 1_ordanance_survey.ipynb ../output/Manchester_OS/Manchester_OS_1_ordanance_survey.ipynb -p local_crs 27700 -p place Manchester_OS -p lat 53.479444 -p lng -2.245278 -p country UK -p crs 4326 -p radius 20
 status=$?
 
 # Check if papermill execution was successful

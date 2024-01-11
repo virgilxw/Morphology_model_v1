@@ -24,19 +24,20 @@
 #SBATCH --time=14:00:00
 #
 # Job name
-#SBATCH --job-name={place}_morph
+#SBATCH --job-name={place}_p4_morph
 #
 # Output file
-#SBATCH --output={place}-slurm-%j.out
+#SBATCH --output={place}_p4_-slurm-%j.out
 
-# email notifications
 #SBATCH --mail-user=reuben.xianwei.wang@strath.ac.uk
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=TIME_LIMIT,FAIL
+
 #======================================================
 
 module purge
 module load miniconda/3.11.4
 module load nvidia/sdk/23.3
+module load gcc/12.2.0
 
 export LD_LIBRARY_PATH=/users/wjb22189/.conda/envs/momepy/lib:$LD_LIBRARY_PATH
 
@@ -49,6 +50,8 @@ export OMP_NUM_THREADS=16
 # Immediately exit if any command has a non-zero exit status.
 set -e
 
+
+
 #======================================================
 # Prologue script to record job details
 # Do not change the line below
@@ -58,7 +61,7 @@ set -e
 
 # Run the Jupyter notebook
 
-dir="output/{place}"
+dir="../output/{place}"
 
 # Check if the directory doesn't exist
 if [ ! -d "$dir" ]; then
@@ -67,7 +70,6 @@ if [ ! -d "$dir" ]; then
     echo "Directory created: $dir"
 fi
 
-# Run the Jupyter notebook and capture the exit status
 papermill 4_network.ipynb ../output/{place}/{place}_4_network.ipynb -p local_crs {local_crs} -p place {place} -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
 status=$?
 

@@ -27,16 +27,18 @@
 #SBATCH --job-name={place}_OS_morph
 #
 # Output file
-#SBATCH --output={place}-OS-slurm-%j.out
+#SBATCH --output={place}_OS-slurm-%j.out
 
-# email notifications
 #SBATCH --mail-user=reuben.xianwei.wang@strath.ac.uk
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=TIME_LIMIT,FAIL
+
+
 #======================================================
 
 module purge
 module load miniconda/3.11.4
 module load nvidia/sdk/23.3
+module load gcc/12.2.0
 
 export LD_LIBRARY_PATH=/users/wjb22189/.conda/envs/momepy/lib:$LD_LIBRARY_PATH
 
@@ -56,9 +58,7 @@ set -e
 /opt/software/scripts/job_prologue.sh  
 #------------------------------------------------------
 
-# Run the Jupyter notebook
-
-dir="output/{place}"
+dir="../output/{place}_OS"
 
 # Check if the directory doesn't exist
 if [ ! -d "$dir" ]; then
@@ -67,8 +67,10 @@ if [ ! -d "$dir" ]; then
     echo "Directory created: $dir"
 fi
 
-# Run the Jupyter notebook and capture the exit status
-papermill 1_ordanance_survey.ipynb ../output/{place}_OS/{place}_1_ordanance_survey.ipynb -p local_crs {local_crs} -p place {place}_OS -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
+# Run the Jupyter notebook
+
+conda activate downloader
+papermill 1_ordanance_survey.ipynb ../output/{place}_OS/{place}_OS_1_ordanance_survey.ipynb -p local_crs {local_crs} -p place {place}_OS -p lat {lat} -p lng {lng} -p country {country} -p crs {crs} -p radius {radius}
 status=$?
 
 # Check if papermill execution was successful

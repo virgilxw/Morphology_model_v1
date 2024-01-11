@@ -27,16 +27,18 @@
 #SBATCH --job-name=Milton_Keynes_OS_morph
 #
 # Output file
-#SBATCH --output=Milton_Keynes-OS-slurm-%j.out
+#SBATCH --output=Milton_Keynes_OS-slurm-%j.out
 
-# email notifications
 #SBATCH --mail-user=reuben.xianwei.wang@strath.ac.uk
-#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-type=TIME_LIMIT,FAIL
+
+
 #======================================================
 
 module purge
 module load miniconda/3.11.4
 module load nvidia/sdk/23.3
+module load gcc/12.2.0
 
 export LD_LIBRARY_PATH=/users/wjb22189/.conda/envs/momepy/lib:$LD_LIBRARY_PATH
 
@@ -56,9 +58,7 @@ set -e
 /opt/software/scripts/job_prologue.sh  
 #------------------------------------------------------
 
-# Run the Jupyter notebook
-
-dir="output/Milton_Keynes"
+dir="../output/Milton_Keynes_OS"
 
 # Check if the directory doesn't exist
 if [ ! -d "$dir" ]; then
@@ -67,8 +67,10 @@ if [ ! -d "$dir" ]; then
     echo "Directory created: $dir"
 fi
 
-# Run the Jupyter notebook and capture the exit status
-papermill 1_ordanance_survey.ipynb ../output/Milton_Keynes_OS/Milton_Keynes_1_ordanance_survey.ipynb -p local_crs 27700 -p place Milton_Keynes_OS -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 20
+# Run the Jupyter notebook
+
+conda activate downloader
+papermill 1_ordanance_survey.ipynb ../output/Milton_Keynes_OS/Milton_Keynes_OS_1_ordanance_survey.ipynb -p local_crs 27700 -p place Milton_Keynes_OS -p lat 52.04 -p lng -0.76 -p country UK -p crs 4326 -p radius 20
 status=$?
 
 # Check if papermill execution was successful
