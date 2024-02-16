@@ -2,7 +2,6 @@ input
 output
 cache
 some-big-repo.git
-gitignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
